@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원주 등대회</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body { margin:0; font-family:'Noto Sans KR', sans-serif; background:#f0f4f8; color:#333; }
+header { position: relative; text-align:center; color:white; }
+.banner { width:100%; height:300px; background:url('https://cdn.pixabay.com/photo/2016/12/27/01/21/lighthouse-1934605_1280.jpg') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+header h1 { font-size:3em; margin:0; text-shadow:2px 2px 4px rgba(0,0,0,0.6);}
+header p { font-size:1.2em; margin-top:10px; text-shadow:1px 1px 3px rgba(0,0,0,0.5); }
+nav { display:flex; justify-content:center; background:#285a8e; flex-wrap:wrap; }
+nav a { color:white; text-decoration:none; padding:15px 25px; transition:0.3s; }
+nav a:hover { background:#1f4170; }
+section { padding:60px 20px; max-width:1000px; margin:auto; }
+section h2 { text-align:center; color:#4a90e2; margin-bottom:40px; font-size:2em; }
+.card { background:white; padding:25px 30px; margin:20px auto; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:0.3s; max-width:850px; cursor:pointer; }
+ul li { margin-bottom:10px; }
+.contact a { color:#4a90e2; font-weight:bold; text-decoration:none; }
+footer { background:#285a8e; color:white; text-align:center; padding:25px; font-size:0.9em; }
+.slider { position:relative; overflow:hidden; border-radius:12px; margin-bottom:40px; }
+.slides { display:flex; transition:transform 0.5s ease-in-out; }
+.slides img { width:100%; flex-shrink:0; }
+.slider-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.4); color:white; border:none; font-size:2em; padding:10px 15px; cursor:pointer; border-radius:5px; }
+.prev { left:10px; }
+.next { right:10px; }
+#editBtn, #saveBtn, #logoutBtn { display:none; margin:20px auto; padding:12px 20px; font-size:1em; background:#4a90e2; color:white; border:none; border-radius:8px; cursor:pointer; }
+#editBtn:hover, #saveBtn:hover, #logoutBtn:hover { background:#357ABD; }
+#editBtnToggle { position:fixed; top:20px; right:20px; z-index:100; }
+#loginPopup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; }
+#loginBox { background:white; padding:30px; border-radius:12px; width:300px; text-align:center; }
+#loginBox input { width:100%; margin:10px 0; padding:10px; border-radius:6px; border:1px solid #ccc; }
+#loginBox button { width:100%; padding:10px; border:none; border-radius:6px; background:#4a90e2; color:white; font-size:1em; cursor:pointer; }
+#loginBox button:hover { background:#357ABD; }
+#loginBox p { color:red; margin-top:10px; }
+</style>
+</head>
+<body>
+
+<button id="editBtnToggle">편집</button>
+
+<div id="loginPopup">
+  <div id="loginBox">
+    <h2>관리자 로그인</h2>
+    <input type="text" id="username" placeholder="아이디">
+    <input type="password" id="password" placeholder="비밀번호">
+    <button id="loginBtn">로그인</button>
+    <p id="msg"></p>
+  </div>
+</div>
+
+<div id="mainContent">
+
+<header>
+    <div class="banner">
+        <h1>원주 등대회</h1>
+        <p>청년들이 함께 성장하고, 빛이 되어 나아가는 모임</p>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">소개</a>
+    <a href="#activities">활동</a>
+    <a href="#schedule">일정</a>
+    <a href="#join">가입</a>
+    <a href="#contact">문의</a>
+</nav>
+
+<section id="about">
+    <h2>등대회 소개</h2>
+    <div class="card">
+        등대회는 원주 지역 청년들이 모여 친목을 다지고, 지역 사회에 봉사하는 모임입니다.
+        서로에게 빛이 되어, 함께 성장하며 행복한 변화를 만들어 갑니다.
+    </div>
+</section>
+
+<section id="activities">
+    <h2>활동 내용</h2>
+    <div class="card">
+        <ul>
+            <li>지역 봉사 활동 (환경 정화, 소외 계층 지원)</li>
+            <li>청년 친목 모임 및 네트워킹</li>
+            <li>교육 및 멘토링 프로그램 참여</li>
+            <li>월간/분기별 이벤트 및 소규모 프로젝트</li>
+        </ul>
+    </div>
+</section>
+
+<section id="schedule">
+    <h2>모임 일정</h2>
+    <div class="card">
+        정기 모임: 한 달에 1번, 추후 일정 공지<br>
+        특별 봉사 활동: 필요 시 별도 공지<br>
+        추가 이벤트: 홈페이지에서 공지
+    </div>
+</section>
+
+<section id="join">
+    <h2>가입 안내</h2>
+    <div class="card">
+        등대회는 청년 누구나 가입 가능합니다. 신청 방법:<br>
+        이메일 신청: <a href="mailto:dnwhd1234@naver.com">dnwhd1234@naver.com</a>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>문의하기</h2>
+    <div class="card contact">
+        <p>대표자: <span>심형종</span></p>
+        <p>이메일: <a href="mailto:dnwhd1234@naver.com">dnwhd1234@naver.com</a></p>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>활동 사진</h2>
+    <div class="slider">
+        <div class="slides">
+            <img src="https://cdn.pixabay.com/photo/2017/08/01/00/19/volunteers-2569234_1280.jpg" alt="봉사 사진1">
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/youth-1837560_1280.jpg" alt="모임 사진2">
+            <img src="https://cdn.pixabay.com/photo/2017/08/10/03/25/group-2618806_1280.jpg" alt="활동 사진3">
+        </div>
+        <button class="slider-btn prev" onclick="prevSlide()">‹</button>
+        <button class="slider-btn next" onclick="nextSlide()">›</button>
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 원주 등대회. All rights reserved.
+</footer>
+
+<button id="editBtn">편집 모드 켜기</button>
+<button id="saveBtn">수정 내용 저장</button>
+<button id="logoutBtn">로그아웃</button>
+
+</div>
+
+<script>
+// 슬라이드
+const slides = document.querySelector('.slides');
+const slideCount = slides.children.length;
+let index = 0;
+function showSlide(i){ slides.style.transform = `translateX(-${i*100}%)`; }
+function nextSlide(){ index = (index + 1) % slideCount; showSlide(index);}
+function prevSlide(){ index = (index - 1 + slideCount) % slideCount; showSlide(index);}
+
+// 편집 버튼 토글
+const editBtnToggle = document.getElementById('editBtnToggle');
+const loginPopup = document.getElementById('loginPopup');
+const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+const editBtn = document.getElementById('editBtn');
+const saveBtn = document.getElementById('saveBtn');
+
+editBtnToggle.addEventListener('click', () => {
+    loginPopup.style.display = 'flex';
+});
+
+loginBtn.addEventListener('click', () => {
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+    if(user==='emdeoghl' && pass==='emdeoghl'){
+        loginPopup.style.display = 'none';
+        alert("관리자 로그인 성공! 편집 버튼을 눌러 텍스트를 수정할 수 있습니다.");
+        editBtn.style.display = 'block';
+        saveBtn.style.display = 'block';
+        logoutBtn.style.display = 'block';
+    } else {
+        document.getElementById('msg').innerText = "아이디 또는 비밀번호가 틀렸습니다.";
+    }
+});
+
+// 편집 모드 (모든 텍스트)
+editBtn.addEventListener('click', () => {
+    const editableElements = document.querySelectorAll('h1, h2, p, .card, ul li, footer, .banner p, .banner h1, .contact span');
+    editableElements.forEach(el => el.contentEditable = true);
+    alert("편집 모드가 활성화되었습니다. 텍스트를 수정 후 저장 버튼을 눌러주세요.");
+});
+
+// 저장 버튼
+saveBtn.addEventListener('click', () => {
+    const blob = new Blob([document.documentElement.outerHTML], {type:"text/html"});
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = "index.html";
+    link.click();
+    URL.revokeObjectURL(link.href);
+    alert("HTML 파일이 저장되었습니다. 기존 파일과 교체하세요.");
+});
+
+// 로그아웃
+logoutBtn.addEventListener('click', () => {
+    location.reload();
+});
+</script>
+
+</body>
+</html>
